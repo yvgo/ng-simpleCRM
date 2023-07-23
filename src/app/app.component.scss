@@ -1,0 +1,55 @@
+.example-container {
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  align-items:flex-start;
+  justify-content: center;
+  z-index: 100;
+}
+
+.sidenav {
+  width: 300px;
+  padding: 20px;
+  z-index: 1;
+}
+
+.logoContainer {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: .5em;
+  display: flex;
+  align-items: center;
+}
+
+.example-icon {
+  margin-right: .75em;
+  cursor: pointer;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    padding-right: 16px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.routerContainer {
+  padding:16px;
+}
