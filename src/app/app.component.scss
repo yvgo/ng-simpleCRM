@@ -18,10 +18,14 @@
 }
 
 .logoContainer {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
   margin-bottom: .5em;
   display: flex;
   align-items: center;
+}
+
+.logo {
+  width: 90px;
 }
 
 .example-icon {

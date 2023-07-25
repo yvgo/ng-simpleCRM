@@ -1,8 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { User } from 'src/models/user.class';
-import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
-//import { Observable } from 'rxjs';
-//import { MatDialogRef } from '@angular/material/dialog';
+import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 
 
 @Component({
@@ -19,11 +17,6 @@ export class DialogAddUserComponent {
 
   constructor(private firestore: Firestore) {}
 
-  /* constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>) {
-    const aCollection = collection(this.firestore, 'items')
-    this.items$ = collectionData(aCollection);
-  } */
-
   saveUser() {
 
     this.user.birthDate = this.birthDate.getTime();
@@ -32,33 +25,15 @@ export class DialogAddUserComponent {
 
     const userObject = this.user.toPlainObject();
 
-    this.firestore.collection('users').add(userObject)
-    .then((result:any) => {
-      //this.loading = false;
-      console.log('adding user finished ', result);
-      //this.dialogRef.close();
-    })
-    .catch((error: any) => {
-      console.error(error);
-    });
-
-    /* const collectionInstance = collection(this.firestore, 'users');
-    addDoc(collectionInstance, this.user)
+    const collectionInstance = collection(this.firestore, 'users');
+    addDoc(collectionInstance, userObject)
     .then(() => {
+      this.loading = false;
       console.log('Data saved sucessfully');
     })
     .catch((err) => {
       console.log(err);
-    }) */
-
-    /* this.firestore
-    .collection('users')
-    .add(this.user)
-    .then((result:any) => {
-      this.loading = false;
-      console.log('adding user finished ', result);
-      this.dialogRef.close();
-    }); */
+    }) 
 
   }
  
