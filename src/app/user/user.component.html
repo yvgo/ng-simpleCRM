@@ -1,37 +1,25 @@
-<mat-card>
+<h1>Users</h1>
+<mat-card class="formatTable">
     <mat-card-content>
-<table class="userTable">
-    <tr>
-        <th>Name</th>
-        <th>E-Mail</th>
-        <th>Birthdate</th>
-        <th>City</th>
-    </tr>
-    <tr>
-        <td>swer</td>
-        <td>E-ersdgfMail</td>
-        <td>wer</td>
-        <td>wer</td>
-    </tr>
-    <tr>
-        <td>swer</td>
-        <td>E-ersdgfMail</td>
-        <td>wer</td>
-        <td>wer</td>
-    </tr>
-    <tr>
-        <td>swer</td>
-        <td>E-ersdgfMail</td>
-        <td>wer</td>
-        <td>wer</td>
-    </tr>
-    
-</table>
+        <table class="userTable">
+            <tr>
+                <th>Name</th>
+                <th>E-Mail</th>
+                <th>Birthdate</th>
+                <th>City</th>
+            </tr>
+            <tr *ngfor="let user of allUsers">
+                <td>{{ user.firstName }} {{ user.lastName }}</td>
+                <td>{{ user.birthDate}}</td>
+                <td>{{ user.mail }}</td>
+                <td>{{ user.city }}</td>
+            </tr>
+        </table>
     </mat-card-content>
-  </mat-card>
+</mat-card>
 
 <div class="buttonUserContainer">
     <button (click)="openDialog()" mat-fab color="primary" matTooltip="Add User">
-        <mat-icon >add</mat-icon>
+        <mat-icon>add</mat-icon>
     </button>
 </div>

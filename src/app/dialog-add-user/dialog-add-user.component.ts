@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from 'src/models/user.class';
 import { Firestore, collection, addDoc } from '@angular/fire/firestore';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class DialogAddUserComponent {
   birthDate!: Date;
   loading = false;
 
-  constructor(private firestore: Firestore) {}
+  constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>, private firestore: Firestore) {}
 
   saveUser() {
 
@@ -23,13 +24,12 @@ export class DialogAddUserComponent {
     console.log('Current user is: ', this.user);
     this.loading = true;
 
-    const userObject = this.user.toPlainObject();
-
-    const collectionInstance = collection(this.firestore, 'users');
-    addDoc(collectionInstance, userObject)
+    const collectionInstance = collection(this.firestore, 'users'); 
+    addDoc(collectionInstance, this.user.toJSON())
     .then(() => {
       this.loading = false;
       console.log('Data saved sucessfully');
+      this.dialogRef.close();
     })
     .catch((err) => {
       console.log(err);

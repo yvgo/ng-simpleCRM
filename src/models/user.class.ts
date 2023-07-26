@@ -1,6 +1,7 @@
 export class User {
     firstName: string;
     lastName: string;
+    mail: string;
     birthDate: number;
     street: string;
     zipCode: number;
@@ -9,6 +10,7 @@ export class User {
     constructor(obj?: any) { // ? bedeuted es ist optional
         this.firstName = obj ? obj.firstName : ''; // kurzschreibweise für if-else abfrage: wenn obj nicht leer dann firstName sonst leerer String
         this.lastName = obj ? obj.lastName : '';
+        this.mail = obj ? obj.mail : '';
         this.birthDate = obj ? obj.birthDate : '';
         this.street = obj ? obj.street : '';
         this.zipCode = obj ? obj.zipCode : '';
@@ -19,6 +21,7 @@ export class User {
         return {
             firstName: this.firstName,
             lastName: this.lastName,
+            mail: this.mail,
             birthDate: this.birthDate,
             street: this.street,
             zipCode: this.zipCode,
@@ -26,7 +29,7 @@ export class User {
         }
     }
 
-    toPlainObject(): any {
+    /* toPlainObject(): any {
         return {
             firstName: this.firstName,
             lastName: this.lastName,
@@ -35,5 +38,5 @@ export class User {
             zipCode: this.zipCode,
             city: this.city
         };
-}
+    } */
 }

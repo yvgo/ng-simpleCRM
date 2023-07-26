@@ -20,6 +20,13 @@
       <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
       <!-- <mat-hint>Please enter a last name.</mat-hint> -->
     </mat-form-field>
+    <label for="cars">E-Mail</label>
+    <mat-form-field appearance="fill">
+      <mat-label>E-Mail</mat-label>
+      <input [disabled]="loading" [(ngModel)]="user.mail" matInput placeholder="Placeholder">
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <!-- <mat-hint>Please enter a last name.</mat-hint> -->
+    </mat-form-field>
     <!-- </fieldset> -->
     <label for="cars">Birthdate</label>
     <mat-form-field appearance="fill" class="example-form-field">
@@ -59,7 +66,7 @@
 </div>
 
 <div mat-dialog-actions>
-  <button mat-button>Cancel</button>
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
   <button mat-button (click)="saveUser()" [mat-dialog-close]="" cdkFocusInitial>Save</button>
 </div>
 

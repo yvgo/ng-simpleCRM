@@ -22,6 +22,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
@@ -49,6 +50,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     MatButtonModule,
     MatTooltipModule,
     MatDialogModule,
+    MatTableModule,
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
