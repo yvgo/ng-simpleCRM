@@ -1,5 +1,6 @@
 import { DialogAddUserComponent } from './../dialog-add-user/dialog-add-user.component';
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
 import { MatTable } from '@angular/material/table';
@@ -19,12 +20,12 @@ export class UserComponent {
 
   ngOnInit(): void {
     
-    collection(this.firestore, 'users')
-    /* .valueChanges()
+    const collectionInstance = collection(this.firestore, 'users');
+    collectionData(collectionInstance)
     .subscribe((changes: any) => {
       console.log('received changes from DB', changes);
       this.allUsers = changes;
-    }) */;
+    });
   }
 
   openDialog(): void {

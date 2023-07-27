@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { User } from 'src/models/user.class';
-import { Firestore, collection, addDoc } from '@angular/fire/firestore';
+import {
+  Firestore, addDoc, collection, collectionData,
+  doc, docData, deleteDoc, updateDoc, DocumentReference, setDoc
+} from '@angular/fire/firestore';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
 
 
 @Component({
