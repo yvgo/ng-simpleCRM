@@ -32,7 +32,7 @@ export class UserComponent {
     this.dialog.open(DialogAddUserComponent);
   }
 
-  getClickedUser(mail: string){
+  /* getClickedUser(mail: string){
 
-  }
+  } */
 }

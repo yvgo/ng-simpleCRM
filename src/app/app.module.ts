@@ -29,6 +29,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { DialogEditComponent } from './dialog-edit/dialog-edit.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     UserComponent,
     DialogAddUserComponent,
     UserDetailComponent,
+    DialogEditComponent,
   ],
   imports: [
     BrowserModule,

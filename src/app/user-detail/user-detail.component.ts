@@ -1,3 +1,4 @@
+import { DialogEditComponent } from './../dialog-edit/dialog-edit.component';
 import { Component } from '@angular/core';
 import { User } from 'src/models/user.class';
 import {
@@ -5,6 +6,7 @@ import {
   doc, docData, deleteDoc, updateDoc, DocumentReference, setDoc
 } from '@angular/fire/firestore';
 import { ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user-detail',
@@ -15,7 +17,7 @@ export class UserDetailComponent {
   userID: any = '';
   user: User = new User();
 
-  constructor(private route: ActivatedRoute, private firestore: Firestore) {}
+  constructor(private route: ActivatedRoute, private firestore: Firestore, public dialog: MatDialog, ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(paramMap => {
@@ -37,7 +39,8 @@ export class UserDetailComponent {
   }
 
   openChangeDialog() {
-
+    const dialog = this.dialog.open(DialogEditComponent);
+    dialog.componentInstance.user = this.user;
   }
 
   openDeleteDialog() {
