@@ -30,13 +30,15 @@ export class DialogAddUserComponent {
 
     const collectionInstance = collection(this.firestore, 'users'); 
     addDoc(collectionInstance, this.user.toJSON())
-    .then(() => {
+    .then((doc) => {
+      //debugger
       this.loading = false;
-      console.log('Data saved sucessfully');
+      var theIdIWant = doc.id;
+      console.log(theIdIWant);
       this.dialogRef.close();
     })
     .catch((err) => {
-      console.log(err);
+      console.log('Problems with Data', err);
     }) 
 
   }

@@ -8,7 +8,7 @@ export class User {
     city: string;
 
     constructor(obj?: any) { // ? bedeuted es ist optional
-        this.firstName = obj ? obj.firstName : ''; // kurzschreibweise für if-else abfrage: wenn obj nicht leer dann firstName sonst leerer String
+        this.firstName = obj ? obj.firstName : ''; // kurzschreibweise für if-else abfrage: wenn obj leer dann firstName sonst leerer String
         this.lastName = obj ? obj.lastName : '';
         this.mail = obj ? obj.mail : '';
         this.birthDate = obj ? obj.birthDate : '';

@@ -1,0 +1,23 @@
+<mat-card class="userCardHeader">
+    <div class="contentHeader">
+        <img class="imgUser" src="./assets/img/woman2.png">
+        <!-- <mat-card-content>Simple card</mat-card-content> -->
+        <div class="userDetails">
+            <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+            {{ user.mail }}
+        </div>
+    </div>
+</mat-card>
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Address:</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ user.street }}</p>
+      <p>{{ user.zipCode }} {{ user.city }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="openDeleteDialog()">Delete</button>
+      <button mat-button (click)="openChangeDialog()">Change</button>
+    </mat-card-actions>
+  </mat-card>

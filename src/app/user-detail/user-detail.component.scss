@@ -1,0 +1,34 @@
+.userCardHeader {
+    min-height: 250px;
+    background-color: #f7db0b;
+    color:rgba($color: #000000, $alpha: 1.0);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    .imgUser{
+        width: 100px;
+        /* border-radius: 100%; */
+        object-fit: cover;
+    }
+}
+
+.contentHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 12px;
+}
+
+.userDetails {
+    margin-left:32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100px;
+}
+
+h2 {
+    margin-bottom:0;
+}

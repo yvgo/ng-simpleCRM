@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
 import { MatTable } from '@angular/material/table';
-import { Firestore, collectionData, collection } from '@angular/fire/firestore';
+import { Firestore, collectionData, collection, getFirestore, doc, getDoc  } from '@angular/fire/firestore';
 
 
 @Component({
@@ -21,7 +21,7 @@ export class UserComponent {
   ngOnInit(): void {
     
     const collectionInstance = collection(this.firestore, 'users');
-    collectionData(collectionInstance)
+    collectionData(collectionInstance ,{idField: 'customIDName'})
     .subscribe((changes: any) => {
       console.log('received changes from DB', changes);
       this.allUsers = changes;
@@ -30,5 +30,9 @@ export class UserComponent {
 
   openDialog(): void {
     this.dialog.open(DialogAddUserComponent);
+  }
+
+  getClickedUser(mail: string){
+
   }
 }
