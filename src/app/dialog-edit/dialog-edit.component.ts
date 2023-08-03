@@ -5,7 +5,7 @@ import {
   doc, docData, deleteDoc, updateDoc, DocumentReference, setDoc
 } from '@angular/fire/firestore';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Observable } from 'rxjs';
+import { update } from '@angular/fire/database';
 
 @Component({
   selector: 'app-dialog-edit',
@@ -16,15 +16,22 @@ export class DialogEditComponent {
 
   //user: User = new User(); // Variable - Typ - Instanz
   user: User = new User(); // Kurzschreibweise
+  userID: any = '';
+  birthDate!: Date;
   loading = false;
 
   constructor(public dialogRef: MatDialogRef<DialogEditComponent>, private firestore: Firestore) {}
 
   saveUser() {
-
-  
-
-  }
- 
+    this.loading = true;
+    const collectionInstance = collection(this.firestore, 'users');
+    const docInstance = doc(collectionInstance, this.userID);
+    updateDoc(docInstance, this.user.toJSON())
+    .then(() => {
+      //debugger
+      this.loading = false;
+      this.dialogRef.close();
+    })
+    }
 
 }

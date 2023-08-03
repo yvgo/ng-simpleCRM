@@ -30,7 +30,6 @@ export class UserDetailComponent {
   getUser() {
     const collectionInstance = collection(this.firestore, 'users'); 
     const docInstance = doc(collectionInstance, this.userID);
-    //addDoc(collectionInstance, this.userID)
     docData(docInstance)
     .subscribe((user: any) => {
       this.user = new User(user);
@@ -40,7 +39,9 @@ export class UserDetailComponent {
 
   openChangeDialog() {
     const dialog = this.dialog.open(DialogEditComponent);
-    dialog.componentInstance.user = this.user;
+    //dialog.componentInstance.user = this.user;
+    dialog.componentInstance.user = new User(this.user.toJSON()); //erstellt Kopie vom User
+    dialog.componentInstance.userID = this.userID;
   }
 
   openDeleteDialog() {
