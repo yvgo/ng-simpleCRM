@@ -53,7 +53,7 @@ export class UserDetailComponent {
     this.router.navigate(['/user']);
   }
 
-  deleteUser() {
-    
+  close() {
+    this.router.navigate(['/user']);
   }
 }
