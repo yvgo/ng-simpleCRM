@@ -20,18 +20,30 @@ export class DialogEditComponent {
   birthDate!: Date;
   loading = false;
 
-  constructor(public dialogRef: MatDialogRef<DialogEditComponent>, private firestore: Firestore) {}
+  constructor(public dialogRef: MatDialogRef<DialogEditComponent>, private firestore: Firestore) { }
 
   saveUser() {
     this.loading = true;
     const collectionInstance = collection(this.firestore, 'users');
     const docInstance = doc(collectionInstance, this.userID);
     updateDoc(docInstance, this.user.toJSON())
-    .then(() => {
-      //debugger
-      this.loading = false;
-      this.dialogRef.close();
-    })
-    }
+      .then(() => {
+        //debugger
+        this.loading = false;
+        this.dialogRef.close();
+      })
+  }
+
+  deleteUser() {
+    this.loading = true;
+    const collectionInstance = collection(this.firestore, 'users');
+    const docInstance = doc(collectionInstance, this.userID);
+    deleteDoc(docInstance)
+      .then(() => {
+        //debugger
+        this.loading = false;
+        this.dialogRef.close();
+      })
+  }
 
 }

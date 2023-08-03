@@ -6,7 +6,8 @@ import {
   doc, docData, deleteDoc, updateDoc, DocumentReference, setDoc
 } from '@angular/fire/firestore';
 import { ActivatedRoute } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user-detail',
@@ -17,7 +18,8 @@ export class UserDetailComponent {
   userID: any = '';
   user: User = new User();
 
-  constructor(private route: ActivatedRoute, private firestore: Firestore, public dialog: MatDialog, ) {}
+  constructor(private route: ActivatedRoute, private router: Router, private firestore: Firestore, public dialog: MatDialog, ) {}
+  //constructor(public dialogRef: MatDialogRef<DialogEditComponent>, private route: ActivatedRoute, private firestore: Firestore, public dialog: MatDialog, ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(paramMap => {
@@ -45,7 +47,13 @@ export class UserDetailComponent {
   }
 
   openDeleteDialog() {
-
+    const collectionInstance = collection(this.firestore, 'users');
+    const docInstance = doc(collectionInstance, this.userID);
+    deleteDoc(docInstance);
+    this.router.navigate(['/user']);
   }
 
+  deleteUser() {
+    
+  }
 }
