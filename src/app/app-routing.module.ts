@@ -1,3 +1,4 @@
+import { NewsComponent } from './news/news.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './user/user.component';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'user', component: UserComponent },
   { path: 'user/:id', component: UserDetailComponent },
+  { path: 'news', component: NewsComponent },
 ];
 
 @NgModule({

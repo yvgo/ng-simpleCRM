@@ -1,1 +1,28 @@
-<p>dashboard works!</p>
+<div class="header-container">
+    <h1>Welcome to Simple CRM</h1>
+</div>
+
+<div class="newsContainer">
+    <div mat-subheader>
+        <h2>Latest Trending TechNews from TechCrunch</h2>
+    </div>
+    <!-- <ng-container *ngFor="let article of articles | slice:0:3"> -->
+    <ng-container *ngFor="let article of articles">
+        <mat-list class="arrangeContent">
+            <div>
+                <img class="spaceImg" [src]="article.urlToImage" alt="Photo of the article">
+            </div>
+            <div>
+                <div matListItemLine>{{article.publishedAt | date:'yyyy-MM-dd'}}</div>
+                <div matListItemTitle><a class="spaceLink" color="primary" href="{{ article.url }}" target="_blank">{{article.title}}</a></div>
+            </div>
+        </mat-list>
+    </ng-container>
+    <div><a [routerLink]=" '/news' ">view more news ...</a></div>
+</div>
+<div>
+    <ng-container>
+        NextBirthdays
+    </ng-container>
+
+</div>

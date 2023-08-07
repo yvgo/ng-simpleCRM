@@ -12,8 +12,8 @@
 }
 
 .sidenav {
-  width: 300px;
-  padding: 20px;
+  width: 230px;
+  padding: 8px 20px;
   z-index: 1;
 }
 
@@ -25,12 +25,16 @@
 }
 
 .logo {
-  width: 90px;
+  width: 60px;
 }
 
 .example-icon {
   margin-right: .75em;
   cursor: pointer;
+}
+
+ul {
+  margin-top: 10px;
 }
 
 .list {
@@ -39,7 +43,7 @@
 
   li {
     padding-right: 16px;
-    height: 32px;
+    height: 45px;
     display: flex;
     align-items: center;
     cursor: pointer;

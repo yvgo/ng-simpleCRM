@@ -1,0 +1,28 @@
+<div class="header-container">
+    <h1>Top 10 Trending TechNews</h1>
+</div>
+
+<div class="newsContainer">
+    <ng-container *ngFor="let article of articles">
+
+        <mat-card class="example-card">
+            <img class="spaceImg" mat-card-image [src]="article.urlToImage" alt="Photo of the article">
+            <mat-card-header>
+              <!-- <div mat-card-avatar class="example-header-image"></div> -->
+              <mat-card-subtitle>{{ article.author }} | <span class="date">{{ article.publishedAt | date:'yyyy-MM-dd' }}</span></mat-card-subtitle>
+              <mat-card-title>{{ article.title }}</mat-card-title>
+              
+            </mat-card-header>
+            
+            <mat-card-content>
+              <p [innerHTML]="article.description"></p>
+            </mat-card-content>
+            <mat-card-actions>
+                <a class="spaceLink" color="primary" href="{{ article.url }}" target="_blank">read more ...</a>
+              <!-- <button mat-button>SHARE</button> -->
+            </mat-card-actions>
+          </mat-card>
+    
+    </ng-container>
+</div>
+<div class="dataSource">Data provided by <a href="https://newsapi.org/" target="_blank">newsapi.org</a></div>
