@@ -24,7 +24,7 @@ export class UserDetailComponent {
   ngOnInit(): void {
     this.route.paramMap.subscribe(paramMap => {
       this.userID = paramMap.get('id');
-      console.log('got ID', this.userID);
+      //console.log('got ID', this.userID);
       this.getUser();
     })
   }
@@ -35,7 +35,7 @@ export class UserDetailComponent {
     docData(docInstance)
     .subscribe((user: any) => {
       this.user = new User(user);
-      console.log('received changes from DB', user);
+      //console.log('received changes from DB', user);
     });
   }
 

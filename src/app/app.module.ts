@@ -35,6 +35,7 @@ import { NewsComponent } from './news/news.component';
 import { MatListModule } from '@angular/material/list';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { RouterModule, Routes } from '@angular/router';
+import { DateNewsPipe } from './pipes/date-news.pipe';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { RouterModule, Routes } from '@angular/router';
     DialogEditComponent,
     NewsComponent,
     WelcomeComponent,
+    DateNewsPipe,
   ],
   imports: [
     BrowserModule,

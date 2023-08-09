@@ -3,17 +3,16 @@
 <div class="infoContainer">
     <div class="newsContainer">
         <div>
-            <h2>Latest Trending TechNews from TechCrunch</h2>
+            <h2>Latest trending TechNews from TechCrunch</h2>
         </div>
-        <!-- <ng-container *ngFor="let article of articles | slice:0:3"> -->
-        <ng-container *ngFor="let article of articles">
+        <ng-container *ngFor="let article of $any(articles | slice:0:3)">
+        <!-- <ng-container *ngFor="let article of articles"> -->
             <mat-list class="arrangeContent">
                 <div>
                     <img class="spaceImg" [src]="article.urlToImage" alt="Photo of the article">
                 </div>
                 <div class="widthNews">
-                    
-                    <div matListItemLine>{{article.publishedAt | date:'yyyy-MM-dd'}}</div>
+                    <div matListItemLine>{{ article.publishedAt | date:'yyyy-MM-dd' }}</div>
                     <div matListItemTitle><a class="spaceLink" color="primary" href="{{ article.url }}" target="_blank">{{article.title}}</a></div>
                 </div>
             </mat-list>
@@ -22,18 +21,17 @@
     </div>
     <div class="birthdayContainer">
         <div>
-            <h2>Upcomming Birthdays of your users</h2>
+            <h2>Upcomming birthdays of your users</h2>
         </div>
-        <ng-container>
+        <ng-container *ngFor="let user of $any(allUsers$ | async | slice:0:3)">
+            
             <mat-list class="arrangeContent">
                 <div>
                     <!-- <img class="spaceImg" [src]="article.urlToImage" alt="Photo of the article"> -->
                 </div>
                 <div class="widthNews">
-                    <div matListItemLine>Datum</div>
-                    <div matListItemTitle>Name Vorname</div>
-                    <!-- <div matListItemLine>{{ user.birthDate | date:'yyyy-MM-dd'}}</div>
-                    <div matListItemTitle><a class="spaceLink" color="primary" href="{{ }}">{{ user.firstName }} {{ user.lastName }}</a></div> -->
+                    <div matListItemLine>{{ user.birthDate | date:'yyyy-MM-dd'}}</div>
+                    <div matListItemTitle>{{ user.firstName }} {{ user.lastName }}</div>
                 </div>
             </mat-list>
         </ng-container>

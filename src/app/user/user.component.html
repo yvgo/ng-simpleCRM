@@ -9,7 +9,7 @@
                 <th>City</th>
             </tr>
             <!-- $any - nimmt alle Daten, die es bekommt unabhängig vom Datentyp -->
-            <tr *ngFor="let user of $any(allUsers)" routerLink="/user/{{user['customIDName']}}">
+            <tr *ngFor="let user of allUsers$ | async" routerLink="/user/{{user['customIDName']}}">
             <!-- <tr *ngFor="let user of $any(allUsers)" (click)="getClickedUser(user.mail)"></tr> -->
             
                 <td>{{ user.firstName }} {{ user.lastName }}</td>

@@ -17,7 +17,7 @@ export class NewsComponent {
   ngOnInit(): void {
     this.newsApi.initArticles()
     .subscribe((res:any) => {
-      console.log(res);
+      //console.log(res);
       this.articles = res.articles;
     });
     /* this.newsApi.initSources()

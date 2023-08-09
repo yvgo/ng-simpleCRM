@@ -25,7 +25,7 @@ export class DialogAddUserComponent {
   saveUser() {
 
     this.user.birthDate = this.birthDate.getTime();
-    console.log('Current user is: ', this.user);
+    //console.log('Current user is: ', this.user);
     this.loading = true;
 
     const collectionInstance = collection(this.firestore, 'users'); 
@@ -34,7 +34,7 @@ export class DialogAddUserComponent {
       //debugger
       this.loading = false;
       var theIdIWant = doc.id;
-      console.log(theIdIWant);
+      //console.log(theIdIWant);
       this.dialogRef.close();
     })
     .catch((err) => {
