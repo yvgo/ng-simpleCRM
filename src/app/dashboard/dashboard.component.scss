@@ -1,7 +1,18 @@
+.infoContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
 .newsContainer {
     display: flex;
     flex-direction: column;
+    width:50%;
     gap: 20px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding:5%;
 }
 
 .example-card {
@@ -11,6 +22,10 @@
 .example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
+}
+
+.widthNews {
+    width: 80%;
 }
 
 .arrangeContent {
@@ -32,7 +47,8 @@ a {
     object-fit: cover;
     width: 80px;
     height: auto;
-    padding: 8px;
+    /* padding: 8px; */
+    border-radius: 5px;
     margin-right: 20px;
 }
 
@@ -42,4 +58,13 @@ a {
 
 .dataSource {
     margin: 2em 0;
+}
+
+.birthdayContainer {
+    width:40%;
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    background-color: rgba(20,161,191, 0.2);
+    border-radius: 20px;
+    padding:5%;
+    gap: 20px;
 }

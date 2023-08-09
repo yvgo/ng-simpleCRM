@@ -10,7 +10,6 @@ export class NewsService {
   API_KEY: string = '7d8d20d8026046a3972539be4ad954da';
   url: string = 'http://newsapi.org/v2/everything?qInTitle=';
   params: string = '&inflation&from=2023-07-02&sortBy=relevancy&apiKey=' //REPLACE YYYY-MM-DD WITH VALID DATE WITHIN ONE MONTH OF RUNNING APP
-  //params: string = '&inflation&from=YYYY-MM-DD&sortBy=relevancy&apiKey=' //REPLACE YYYY-MM-DD WITH VALID DATE WITHIN ONE MONTH OF RUNNING APP
   
   constructor(private http: HttpClient) { }
 

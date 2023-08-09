@@ -9,7 +9,6 @@
       <li [routerLink]=" '/' "><mat-icon class="example-icon">grid_view</mat-icon>Dashboard</li>
       <li [routerLink]=" '/news' "><mat-icon class="example-icon">feed</mat-icon>News</li>
       <li [routerLink]=" '/user' "><mat-icon class="example-icon">person</mat-icon>User</li>
-        <li></li>
     </ul>
    <!--  <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
     <button (click)="showFiller = !showFiller" mat-raised-button>
@@ -18,7 +17,7 @@
   </mat-drawer>
 
   <div class="example-sidenav-content">
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="toolbarContainer">
       <mat-toolbar-row>
         <mat-icon class="example-icon" (click)="drawer.toggle()">menu</mat-icon>
         <span>Simple CRM</span>

@@ -1,3 +1,9 @@
+
+.toolbarContainer{
+  height: 90px;
+  padding-top: 14px;
+}
+
 .example-container {
   width: 100vw;
   height: 100vh;
@@ -25,7 +31,7 @@
 }
 
 .logo {
-  width: 60px;
+  width: 80px;
 }
 
 .example-icon {
@@ -39,7 +45,9 @@ ul {
 
 .list {
   list-style-type: none;
-  padding: 0;
+  
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  padding: 10px 0 10px;
 
   li {
     padding-right: 16px;

@@ -3,7 +3,7 @@ import { NewsService } from '../services/news.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
-
+import { RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',

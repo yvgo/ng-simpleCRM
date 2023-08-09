@@ -33,6 +33,8 @@ import { DialogEditComponent } from './dialog-edit/dialog-edit.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsComponent } from './news/news.component';
 import { MatListModule } from '@angular/material/list';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { RouterModule, Routes } from '@angular/router';
 
 
 @NgModule({
@@ -44,6 +46,7 @@ import { MatListModule } from '@angular/material/list';
     UserDetailComponent,
     DialogEditComponent,
     NewsComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +70,7 @@ import { MatListModule } from '@angular/material/list';
     MatCardModule,
     MatListModule,
     HttpClientModule,
+    RouterModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
